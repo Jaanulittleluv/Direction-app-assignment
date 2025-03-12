@@ -1,33 +1,59 @@
-Overview
-This is a direction-based application that helps users navigate between multiple locations. This project was developed using Angular 14+ and Angular Material for the user interface. Additionally, it integrates Google Maps for route visualization.
+# DirectionsApp
 
-Features
-- Display of Google Maps within the application
-- Navigation and route guidance between multiple locations
-- Interactive UI built with Angular Material
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
 
-Technologies Used
-- Angular 14+
-- Angular Material
-- Google Maps API
+## Development server
 
-Challenges & Learning Outcomes
-As Angular was a new framework for me, I encountered some challenges while implementing the Google Maps direction feature. Despite these challenges, I am committed to improving my expertise in Angular and refining the application's functionality.
+To start a local development server, run:
 
-## Installation & Setup
-1. Clone the repository:
-   git clone <repository_url>
-2. Navigate to the project directory:
-   cd direction-app
-3. Install dependencies:
-   npm install
-4. Run the application:
-   ng serve
-5. Open a browser and go to `http://localhost:4200/` to access the app.
+```bash
+ng serve
+```
 
-Future Enhancements
-- Fixing the Google Maps direction issue
-- Adding real-time location tracking
-- Enhancing UI/UX for a better user experience
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
+## Code scaffolding
 
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
