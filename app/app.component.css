@@ -1,0 +1,33 @@
+#container{
+  display: flex;
+}
+#formcontainer{
+  width:30%
+}
+  
+  
+  
+  .map-container {
+    width: 70%;
+    margin-top: 20px;
+  }
+  
+  #map {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media screen and (max-width: 750px) {
+    #container{
+      display: block;
+    }
+    #formcontainer{
+      width:auto;
+    }
+    .map-container {
+      width: auto;
+      margin-top: 20px;
+    }
+  }
+  

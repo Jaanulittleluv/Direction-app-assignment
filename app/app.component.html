@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row style="align-items: center;">
+    <span>Direction App</span>
+  </mat-toolbar-row>
+  </mat-toolbar>
+  <div id="container">
+    <div id="formcontainer">
+      <mat-card>
+        <mat-card-content>
+          <mat-form-field>
+            <mat-label>Origin:</mat-label>
+            <input matInput type="text" [(ngModel)]="origin" name="origin" required />
+          </mat-form-field>
+      
+          <div *ngFor="let destination of destinations; let i = index">
+            <mat-form-field appearance="outline">
+              <mat-label>Destination {{ i + 1 }}</mat-label>
+              <input matInput type="text" [(ngModel)]="destinations[i]" name="destination{{i}}" required />
+            </mat-form-field>
+          </div>
+      
+          <div class="buttondiv">
+            <button mat-stroked-button color="primary" (click)="getDirections()">Get Directions</button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="map-container">
+      <div id="map" style="height: 650px; width: 100%;"></div>
+    </div>
+  </div>
+ 
+
+
+
+
+
