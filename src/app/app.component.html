@@ -1,0 +1,67 @@
+<div>
+  <mat-card appearance="outlined" [ngStyle]="{'background-color':'#e9e0e4','margin':'50px'}">
+    <mat-card-content>  
+      <mat-form-field appearance="outline">
+        <mat-label [ngStyle]="{'color':'#4e444b'}">Enter Origin</mat-label>
+        <input matInput  #originInput [(ngModel)]="origin" [ngStyle]="{'color':'#4e444b'}">
+      </mat-form-field>  
+
+      <mat-form-field appearance="outline">
+        <mat-label [ngStyle]="{'color':'#4e444b'}">Enter Destination</mat-label>
+        <input matInput  #destinationInput [ngStyle]="{'color':'#4e444b'}">
+      </mat-form-field> 
+
+      <ol>
+        <li *ngFor="let destination of destinations; let i = index">
+          {{ destination }}
+          <button mat-button (click)="removeDestination(i)">
+            <mat-icon [ngStyle]="{'color':'#4e444b'}">close</mat-icon>
+          </button>
+        </li>
+      </ol>
+
+      <div class="button-container">
+        <button mat-fab extended (click)="addDestination(destinationInput.value)" 
+          [disabled]="destinations.length >= 7" 
+          [ngStyle]="{'color':'#e9e0e4','background-color':'#4e444b'}">
+            Add Destination
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <div class="button-container">
+    <button mat-fab extended (click)="calculateRoute()" 
+    [ngStyle]="{'color':'#e9e0e4','background-color':'#4e444b'}">
+      Get Route
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="travelDetails" class="mat-elevation-z8">
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef > From </th>
+      <td mat-cell *matCellDef="let detail"> {{ detail.from }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef> To </th>
+      <td mat-cell *matCellDef="let detail"> {{ detail.to }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="distance">
+      <th mat-header-cell *matHeaderCellDef> Distance </th>
+      <td mat-cell *matCellDef="let detail"> {{ detail.distance }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="duration">
+      <th mat-header-cell *matHeaderCellDef> Duration </th>
+      <td mat-cell *matCellDef="let detail"> {{ detail.duration }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngStyle]="{'background-color':'#4e444b'}"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngStyle]="{'background-color':'#e9e0e4','color':'#4e444b'}"></tr>
+  
+  </table>
+  
+  <div id="map" style="height: 500px;"></div>
+</div>
